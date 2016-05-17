@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja" manifest="butlerYoiyamiWeb.appcache">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="components/loader.js"></script>
+	<script src="./js/jquery-1.12.3.min.js"></script>
+	<script src="./js/html5shiv.js"></script>
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+	<!-- nend広告 ヘッダー -->
+	<script>var nend_params = {"media":38870,"site":209759,"spot":592053,"type":1,"oriented":3};</script>
+	<script src="https://js1.nend.net/js/nendAdLoader.js"></script>
+	<!-- //nend広告 ヘッダー -->
+	<!-- メインコンテンツ -->
+	<div class="wrap">
+		<div class="jsc-scroll_wrap scroll_wrap">
+			<!-- nend:広告 -->
+			<script type="text/javascript">
+			var nend_params = {"media":38870,"site":209759,"spot":592053,"type":1,"oriented":3};
+			</script>
+			<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+			<!-- //nend:広告 -->
+			<header></header>
+			<main>
+				<!-- コンテンツここから -->
+				<section class="content_setting">
+					<!-- setting -->
+					<h2>Setting</h2>
+					<div class="bg_black">
+						<p class="compStr jsc-compStr"></p>
+						<fieldset>
+							<legend>呼び名</legend>
+							<input type="text" id="uName" name="uName" maxlength="6" placeholder="最大6文字まで" value="">
+							お嬢様
+						</fieldset>
+						<fieldset>
+							<legend>誕生日</legend>
+							<input type="tel" id="uBirthM" name="uBirthM" max="12" min="1" value="7">
+							月
+							<input type="tel" id="uBirthD" name="uBirthD" max="31" min="1" value="2">
+							日
+						</fieldset>
+						<fieldset>
+							<legend>執事の案内</legend>
+							<label class="switch">
+								<input type="checkbox" name="jsi-speach" class="switch-input" checked>
+								<span class="switch-label" data-on="On" data-off="Off"></span>
+								<span class="switch-handle"></span>
+							</label>
+						</fieldset>
+						<nav>
+							<button onclick="update();">
+								設定する
+								<span class="subText">設定は後から変更できます</span>
+							</button>
+						</nav>
+					</div>
+				</section>
+				<!-- //コンテンツここまで -->
+			</main>
+			<footer></footer>
+		</div>
+	</div>
+	<div class="overlay" id="js-overlay"></div>
+	<nav class="jsc-glovalNav global_nav"></nav>
+	<!-- js -->
+	<script src="./js/app_ls.js"></script>
+	<script src="./js/jQuery.speach.js"></script>
+	<script src="./js/proto.butler.js"></script>
+	<script src="./js/common.js"></script>
+<script>
+//createDatabase();
+/**
+	1. フォーム送信された内容を取得
+	2. DBを更新
+	3. OP完了フラグをたてる
+	4. main.htmlに移動する
+*/
+function update() {
+	var name		= $('[name="uName"]').val(),
+		birthM		= $('[name="uBirthM"]').val(),
+		birthD		= $('[name="uBirthD"]').val(),
+		sFlag		= $('[name="jsi-speach"]').is(':checked');
+
+	// setLS(uName, uBirth, bTalk, targetFlag, targetFlagValue)
+	setLS(name, birthM + '/' + birthD, sFlag);
+	location.href		= './setting.html?type=comp';
+}
+/**
+	初期動作:
+		トークファイルを読み込む
+		メニューを読み込む
+*/
+$(function() {
+	talkFileLoad('setting');
+	fileLoad($('.jsc-glovalNav'), 'glovalNav');
+});
+</script>
+</body>
+</html>

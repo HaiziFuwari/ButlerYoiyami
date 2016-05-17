@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" manifest="butlerYoiyamiWeb.appcache">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+	<script src="components/loader.js"></script>
+	<script src="./js/jquery-1.12.3.min.js"></script>
+	<script src="./js/html5shiv.js"></script>
+	<link rel="stylesheet" href="components/loader.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+	<!-- メインコンテンツ -->
+	<div class="wrap">
+		<div class="jsc-scroll_wrap scroll_wrap">
+			<!-- nend:広告 -->
+			<script type="text/javascript">
+			var nend_params = {"media":38870,"site":209759,"spot":592053,"type":1,"oriented":3};
+			</script>
+			<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+			<!-- //nend:広告 -->
+			<header></header>
+			<main>
+				<!-- コンテンツここから -->
+				<section class="content_about">
+					<h2>Help</h2>
+					<!-- about -->
+					<div class="bg_black">
+						<dl>
+							<dt>宵闇執事について</dt>
+							<dd>
+								宵闇執事とは、月光館というお屋敷にてお嬢様に仕えている執事です。<br>
+								お嬢様を心から愛してやまない、ちょっぴり独占欲の強い男。しかしホラー系は苦手で、幼少期に先祖の幽霊にあったことを告白している。<br>
+								お嬢様より3歳年上で、お嬢様と同い年の弟が1人。父は旦那様に仕える執事で、幼少の頃から執事の家系としてお嬢様の家に仕えています。最近では、旦那様の事業に父と同伴することも・・・。<br>
+								ガトーショコラを作ることが得意で、奥様のティータイムにお出しすることもしばしば。その日は奥様の機嫌がよくなる。
+							</dd>
+							<dt>当アプリについて</dt>
+							<dd>
+								当アプリは宵闇執事のオフィシャルサイトとしての役割を担っています。<br>
+								某ブログ【月夜の宴】で掲載されたストーリーやイラスト、アプリケーションなどをご紹介！設定画面からお嬢様の呼び名を予め設定しておくと、ストーリーや会話に呼び名が表示されます。「執事がいる…」そんなライフスタイルをお届けいたします！
+							</dd>
+							<dt>推奨環境</dt>
+							<dd>
+								Android : Chrome40～ / Firefox34～<br>
+								iPhone : Safari8～ / iOS8～<br>
+							</dd>
+							<dt>運営者情報</dt>
+							<dd>
+								運営者 ： Maiden-Theater<br>
+								HP : http://maiden-theater.com/<br>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<!-- //コンテンツここまで -->
+			</main>
+			<footer></footer>
+		</div>
+	</div>
+	<div class="overlay" id="js-overlay"></div>
+	<nav class="jsc-glovalNav global_nav"></nav>
+	<!-- js -->
+	<script src="./js/app_db.js"></script>
+	<script src="./js/common.js"></script>
+<script>
+/**
+	初期動作:
+		トークファイルを読み込む
+		メニューを読み込む
+*/
+$(function() {
+	talkFileLoad('about');
+	fileLoad($('.jsc-glovalNav'), 'glovalNav');
+});
+</script>
+</body>
+</html>

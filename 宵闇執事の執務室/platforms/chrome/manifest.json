@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "宵闇執事の執務室~Butler's Office~",
+    "description": "お嬢様になって宵闇執事との物語を楽しもう！呼び名を設定していただくことで物語に名前が反映されるので、まるでゲーム感覚で物語を読むことができます。",
+    "version": "0.1.0",
+    "app": {
+        "background": {
+            "scripts": [
+                "background.js"
+            ]
+        }
+    },
+    "icons": {
+        "128": "icon.png"
+    },
+    "permissions": [
+        "clipboardWrite",
+        "clipboardRead",
+        "unlimitedStorage"
+    ],
+    "offline_enabled": false,
+    "optional_permissions": [],
+    "externally_connectable": {
+        "ids": [],
+        "matches": [],
+        "accepts_tls_channel_id": false
+    },
+    "short_name": "宵闇執事の執務室"
+}
